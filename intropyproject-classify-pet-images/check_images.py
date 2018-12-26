@@ -97,6 +97,7 @@ def main():
     # dictionary is returned from the function call as the variable results_stats
     # Calculates results of run and puts statistics in the Results Statistics
     # Dictionary - called results_stats
+
     results_stats = calculates_results_stats(results)
 
     # Function that checks Results Statistics Dictionary using results_stats
