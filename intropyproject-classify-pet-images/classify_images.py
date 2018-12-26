@@ -70,6 +70,7 @@ def classify_images(images_dir, results_dic, model):
         # print("{}: {}".format(key, results_dic[key]))
         classifier_labels = classifier(images_dir + key, model).lower().strip()
         # print(classifier_labels)
+
         pet_labels = results_dic[key][0]
 
         # print(pet_labels)

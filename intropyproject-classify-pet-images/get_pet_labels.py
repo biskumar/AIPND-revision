@@ -46,6 +46,7 @@ def get_pet_labels(image_dir):
     for file in filename_list:
         if not file.startswith('.'):
             results_dic.update({file: [file.split('_0')[0].replace("_", " ").lower().strip(" ")]})
+
             #print(file)
             #print(file.replace("_", " ").strip("").lower())
             #print(file.split('_0')[0].replace("_", " ").lower())
