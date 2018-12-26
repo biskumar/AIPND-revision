@@ -65,8 +65,7 @@ def print_results(results_dic, results_stats_dic, model,
            None - simply printing results.
     """   
     # Prints summary statistics over the run
-    print("\n\n*** Results Summary for CNN Model Architecture",model.upper(), 
-          "***")
+    print("\n\n*** Results Summary for CNN Model Architecture",model.upper(), "***")
     print("{:20}: {:3d}".format('N Images', results_stats_dic['n_images']))
     print("{:20}: {:3d}".format('N Dog Images', results_stats_dic['n_dogs_img']))
 
@@ -75,11 +74,12 @@ def print_results(results_dic, results_stats_dic, model,
     #          that's accessed by key 'n_notdogs_img' using dictionary 
     #          results_stats_dic
     #
-    print("")
+    print("{:20}: {:3d}".format('N Not-Dog Images', results_stats_dic['n_notdogs_img']))
 
 
     # Prints summary statistics (percentages) on Model Run
-    print(" ")
+    print("\n\n*** Results Summary statistics(percentage)", model.upper(), "%")
+
     for key in results_stats_dic:
         # TODO: 6b. REPLACE pass with CODE that prints out all the percentages 
         #           in the results_stats_dic dictionary. Recall that all 
@@ -90,7 +90,9 @@ def print_results(results_dic, results_stats_dic, model,
         #           both the key and the value. Remember the value is accessed 
         #           by results_stats_dic[key]
         #
-        pass 
+        if(key.startswith('p')):
+            print("Key", key)
+            print ("Value" , results_stats_dic[key])
 
 
     # IF print_incorrect_dogs == True AND there were images incorrectly 
@@ -136,6 +138,5 @@ def print_results(results_dic, results_stats_dic, model,
 
             # Pet Image Label is-a-Dog, classified as-a-dog but is WRONG breed
             if ( sum(results_dic[key][3:]) == 2 and
-                results_dic[key][2] == 0 ):
-                print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
-                                                          results_dic[key][1]))
+                    results_dic[key][2] == 0):
+                        print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],results_dic[key][1]))
