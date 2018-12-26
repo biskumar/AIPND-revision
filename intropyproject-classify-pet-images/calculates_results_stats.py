@@ -105,7 +105,9 @@ def calculates_results_stats(results_dic):
         #           representing the number of correctly classified dog breeds.
         #
         # Pet Image Label is a Dog AND Labels match- counts Correct Breed
-        if results_dic[key][1] == 1 and results_dic[key][2] == 1:
+
+
+        if results_dic[key][2] == 1 and results_dic[key][3] == 1:
             results_stats_dic['n_correct_breed'] += 1
 
         # Pet Image Label is a Dog - counts number of dog images
@@ -114,7 +116,7 @@ def calculates_results_stats(results_dic):
 
             # Classifier classifies image as Dog (& pet image is a dog)
             # counts number of correct dog classifications
-            if results_dic[key][4] == 1:
+            if results_dic[key][3] == 1 and results_dic[key][4] == 1:
                 results_stats_dic['n_correct_dogs'] += 1
 
         # TODO: 5b. REPLACE pass with CODE that counts how many pet images
